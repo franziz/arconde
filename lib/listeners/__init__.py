@@ -14,8 +14,7 @@ class Listener:
 			raise falcon.HTTPBadRequest("Empty request body","A valid JSON document is required.")
 		self.payload = self.payload.decode("utf-8")
 		self.payload = json.loads(self.payload)
-		self.payload = self.parse(self.payload)
-		print(self.payload)
+		self.payload = self.parse(self.payload)		
 		if self.payload is None:
 			raise falcon.HTTPBadRequest("Parse failed","Cannot parse the payload.")
 		handler = HandlerFactory.get_handler(self.payload.event_type)
@@ -25,6 +24,8 @@ class Listener:
 		assert payload is not None, "payload is not defined."
 
 		parsed_payload = Payload(payload)
+		success        = False
 		if "ref" in payload and "before" in payload and "after" in payload:
 			parsed_payload.event_type = WebHook.EventType.PUSH
-		return None
+			success                   = True
+		return None if not success else parsed_payload
