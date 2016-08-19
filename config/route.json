@@ -1,15 +1,15 @@
 {
 	"isidsea/engine_sources/high_priority":{
 		"branch":"high_priority",
-		"root_path":"/root/app/storage/sources/",
-		"full_path":"/root/app/storage/sources/engine_sources/high_priority/",
+		"root_path":"/root/app/storage/",
+		"full_path":"/root/app/storage/engine_sources/high_priority/",
 		"route":{
-			"type":"push",
-			"host":"production_server",
-			"container":{
-				"id":"7083c0a6d8d0",
-				"target":"/root/app/src/"
-			}
+			"push":{
+					"host":"test_server",
+					"target":"/home/isid/arcrawler/src",
+					"container":"arcrawler"
+				}
+			}			
 		}
 	}
 }
