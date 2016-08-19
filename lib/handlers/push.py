@@ -5,6 +5,7 @@ from ..host     		import Host
 from ..sftp 			import SFTP
 from . 					import Handler
 import os
+import json
 
 class PushHandler(Handler):
 	def __init__(self):
