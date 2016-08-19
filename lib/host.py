@@ -21,8 +21,8 @@ class Host:
 	def get_ssh(self):
 		return self.ssh
 
-	def run_command(self, command=None):
+	def run_command(self, command=None, **kwargs):
 		assert command  is not None, "command is not defined."
 		assert self.ssh is not None, "ssh is not defined."
-		return self.ssh.exec_command(command)
+		return self.ssh.exec_command(command, **kwargs)
 		
