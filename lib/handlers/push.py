@@ -35,6 +35,7 @@ class PushHandler(Handler):
 	
 			os.chdir(route_details["full_path"])			
 			if is_new:
+				Shell.run_command("git init")
 				Shell.run_command("git remote add origin %s" % payload.clone_url)
 				Shell.run_command("git remote update --prune")
 				Shell.run_command("git pull orgin %s" % payload.branch)
