@@ -15,6 +15,7 @@ class Listener:
 		self.payload = self.payload.decode("utf-8")
 		self.payload = json.loads(self.payload)
 		self.payload = self.parse(self.payload)
+		print(self.payload)
 		if self.payload is None:
 			raise falcon.HTTPBadRequest("Parse failed","Cannot parse the payload.")
 		handler = HandlerFactory.get_handler(self.payload.event_type)

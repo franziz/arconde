@@ -8,7 +8,7 @@ class EngineSourceListener(Listener):
 
 		res.status = falcon.HTTP_200
 		res.body   = json.dumps({
-						 "event_type":self.payload.event_type,
-					     "branch":self.payload.branch,
-					     "repository":self.payload.repository
+						 "event_type" : self.payload.event_type,
+					         "branch" : self.payload.branch,
+					     "repository" : self.payload.repository
 					 })
