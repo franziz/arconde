@@ -80,6 +80,6 @@ class PushHandler(Handler):
 			current_directory = mount["Source"]
 			for path in extended_path.split("/")[1:]:
 				sftp.mkdir("%s/%s" % (current_directory, path))
-			put_dir(sftp, route_details["full_path"], push_details["target"]) # Copy all files inside full_path to target
+			sftp.put_dir(sftp, route_details["full_path"], push_details["target"]) # Copy all files inside full_path to target
 		except CannotFindField as cannot_find_field:
 			raise HandlerInterruption(cannot_find_field)
