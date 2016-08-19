@@ -6,7 +6,7 @@ class Host:
 		self.config = config
 		self.ssh    = None
 
-	def connect(self):
+	def connect(self):		
 		print("[host][debug] Connecting...")
 		self.ssh = paramiko.SSHClient()
 		self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -22,6 +22,7 @@ class Host:
 		return self.ssh
 
 	def run_command(self, command=None):
-		assert command is not None, "command is not defined."
-		return ssh.exec_command(command)
+		assert command  is not None, "command is not defined."
+		assert self.ssh is not None, "ssh is not defined."
+		return self.ssh.exec_command(command)
 		

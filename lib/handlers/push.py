@@ -56,7 +56,7 @@ class PushHandler(Handler):
 			host         = Host(host_details)
 			host.connect()
 			
-			stdin, stdout, stderr = ssh.exec_command(
+			stdin, stdout, stderr = host.run_command(
 				command = "sudo rm -rv %s" % push_details["target"], 
 				get_pty = True
 			)
@@ -64,7 +64,7 @@ class PushHandler(Handler):
 			stdin.flush()
 			stdout.channel.recv_exit_status() # wait until the command gives exit_status			
 
-			stdin, stdout, stderr = ssh.exec_command("docker inspect %s" % push_details["container"])
+			stdin, stdout, stderr = host.run_command("docker inspect %s" % push_details["container"])
 			container_details     = ""
 			for line in stdout:
 				container_details += line
