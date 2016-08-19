@@ -35,6 +35,7 @@ class PushHandler(Handler):
 				os.makedirs(route_details["full_path"], exist_ok=True)
 
 			os.chdir(route_details["full_path"])
+			print(os.getcwd())
 			if is_new:
 				Shell.run_command("git remote add origin %s" % payload.clone_url)
 				Shell.run_command("git remote update --prune")
