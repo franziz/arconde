@@ -22,6 +22,7 @@ class Listener:
 	def parse(self, payload=None):
 		assert payload is not None, "payload is not defined."
 
+		parsed_payload = Payload(payload)
 		if "ref" in payload and "before" in payload and "after" in payload:
-			return Payload(payload)
+			parsed_payload.event_type = WebHook.EventType.PUSH
 		return None
