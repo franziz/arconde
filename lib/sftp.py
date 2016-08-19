@@ -10,10 +10,10 @@ class SFTP:
 		self.sftp.mkdir(path)
 
 	def put_dir(self, source=None, target=None):
-	""" Copy a whole directory in a recursive way. 
-		This function assume that all the source and target are in linux format.
-		Therefore, os.path.join() is not implemented.
-	"""
+		""" Copy a whole directory in a recursive way. 
+			This function assume that all the source and target are in linux format.
+			Therefore, os.path.join() is not implemented.
+		"""
 		assert source is not None, "source is not defined."
 		assert target is not None, "target is not defined."
 
