@@ -38,7 +38,7 @@ class PushHandler(Handler):
 				Shell.run_command("git init")
 				Shell.run_command("git remote add origin %s" % payload.clone_url)
 				Shell.run_command("git remote update --prune")
-				Shell.run_command("git pull orgin %s" % payload.branch)
+				Shell.run_command("git pull origin %s" % payload.branch)
 				Shell.run_command("git branch --set-upstream-to=origin/%s" % payload.branch)
 			else:
 				Shell.run_command("git remote update --prune")
