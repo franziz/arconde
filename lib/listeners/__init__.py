@@ -1,6 +1,6 @@
-from ..factories   import HandlerFactory
-from ..git.webhook import WebHook
-from ..git.payload import Payload
+from ..factories.handler import HandlerFactory
+from ..git.webhook       import WebHook
+from ..git.payload       import Payload
 
 class Listener:
 	def on_get(self, req, res):
