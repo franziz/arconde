@@ -5,7 +5,7 @@
 		"full_path":"/root/app/storage/engine_sources/high_priority/",
 		"route":{
 			"push":{
-					"host":"test_server",
+					"host":"production_server",
 					"target":"/home/isid/arcrawler/src",
 					"container":"arcrawler"
 			}
