@@ -6,7 +6,7 @@ class HandlerFactory:
 		pass
 
 	@classmethod
-	def get(self, handler_name=None):
+	def get_handler(self, handler_name=None):
 		assert handler_name is not None, "handler_name is not defined."
 
 		if handler_name == WebHook.EventType.PUSH:
