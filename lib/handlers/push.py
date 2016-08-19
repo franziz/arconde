@@ -75,7 +75,7 @@ class PushHandler(Handler):
 			# Making directory from extended_path
 			# for example "/src" is the extended_path, then the iteration is based on
 			# number of words splitted by "/"
-			extended_path     = push_details["target"].replace(mount["Source"])
+			extended_path     = push_details["target"].replace(mount["Source"],"")
 			sftp              = SFTP(host.get_ssh())
 			current_directory = mount["Source"]
 			for path in extended_path.split("/")[1:]:
