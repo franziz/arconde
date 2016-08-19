@@ -24,5 +24,14 @@ class Host:
 	def run_command(self, command=None, **kwargs):
 		assert command  is not None, "command is not defined."
 		assert self.ssh is not None, "ssh is not defined."
+		
+		print("[host][debug] Excuting: %s" % command)
 		return self.ssh.exec_command(command, **kwargs)
+
+	def restart(self, container=None):
+		assert container is not None, "container is not defined."
+		print("[host][debug] Restarting...")
+		self.run_command("docker restart %s" % container)
+		self.run_command("docker exec -d %s bash /root/app/kick_start.sh" % container)
+		print("[host][debug] Started!")
 		
