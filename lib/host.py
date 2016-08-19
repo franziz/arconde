@@ -31,7 +31,9 @@ class Host:
 	def restart(self, container=None):
 		assert container is not None, "container is not defined."
 		print("[host][debug] Restarting...")
-		self.run_command("docker restart %s" % container)
-		self.run_command("docker exec -d %s bash /root/app/kick_start.sh" % container)
+		stdin, stdout, stderr = self.run_command("docker restart %s" % container)
+		print("[host][debug] Restarting %s: %s" % (container, stdout.channel.recv_exit_status()))
+		stdin, stdout, stderr = self.run_command("docker exec -d %s bash /root/app/kick_start.sh" % container)
+		print("[host][debug] Executing kick_start.sh: %s" % stdout.channel.recv_exit_status())
 		print("[host][debug] Started!")
 		
