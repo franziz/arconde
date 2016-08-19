@@ -8,5 +8,12 @@ class EngineSourceListener(Listener):
 		if not payload:
 			raise falcon.HTTPBadRequest("Empty request body","A valid JSON document is required.")
 		payload = payload.decode("utf-8")
+		payload = json.loads(payload)
+
+		event_type, payload = self.parse(payload)
+
 		res.status = falcon.HTTP_200
-		res.body   = payload
+		res.body   = json.dumps({
+					     "event_type":event_type,
+					     "branch":payload.branch
+					 })
