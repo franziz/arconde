@@ -1,4 +1,4 @@
-from .factory     import HandlerFactory
+from ..factory     import HandlerFactory
 from ..git.webhook import WebHook
 from ..git.payload import Payload
 
