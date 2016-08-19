@@ -9,7 +9,7 @@ class Shell:
 	def run_command(command=None):
 		assert command is not None, "command is not defined."
 		command = command.split(" ") if not type(command) is list else command
-		print("[sheel][debug] Excuting %s" % " ".join(command))
+		print("[sheel][debug] Excuting: %s" % " ".join(command))
 		
 		proc    = subprocess.Popen(command, stdout=subprocess.PIPE)
 		success = False
