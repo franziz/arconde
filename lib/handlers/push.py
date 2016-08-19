@@ -1,6 +1,7 @@
 from ..shell            import Shell
 from ..exceptions       import HandlerInterruption, CannotFindField
 from ..factories.config import ConfigFactory
+from . 					import Handler
 import os
 
 class PushHandler(Handler):
