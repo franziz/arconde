@@ -1,4 +1,4 @@
-from lib.factory import ListenerFactory
+from lib.factories import ListenerFactory
 import falcon
 
 

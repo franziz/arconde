@@ -1,6 +1,6 @@
 from ..shell      import Shell
 from ..exceptions import HandlerInterruption, CannotFindRoute
-from ..factory    import ConfigFactory
+from ..factories  import ConfigFactory
 import os
 
 class PushHandler(Handler):
