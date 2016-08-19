@@ -8,7 +8,7 @@ class Listener:
 
 	def on_post(self, req, res):
 		self.payload = req.stream.read()
-		if not payload:
+		if not self.payload:
 			raise falcon.HTTPBadRequest("Empty request body","A valid JSON document is required.")
 		self.payload = self.payload.decode("utf-8")
 		self.payload = json.loads(self.payload)
