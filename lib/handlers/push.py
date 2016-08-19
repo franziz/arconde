@@ -25,7 +25,6 @@ class PushHandler(Handler):
 
 			# Make a route name by combining payload.repository + payload.branch
 			route_name = "%s/%s" % (payload.repository, payload.branch)
-			print(route_name)
 			# Opening /root/app/config/route.json
 			self.route_config = ConfigFactory.get_config(ConfigFactory.ROUTE)
 			route_details     = self.route_config.get(route_name) # This will throw an error if the route_name cannot be found
@@ -33,9 +32,8 @@ class PushHandler(Handler):
 			is_new = not os.path.isdir(route_details["full_path"])
 			if is_new:
 				os.makedirs(route_details["full_path"], exist_ok=True)
-
-			os.chdir(route_details["full_path"])
-			print(os.getcwd())
+	
+			os.chdir(route_details["full_path"])			
 			if is_new:
 				Shell.run_command("git remote add origin %s" % payload.clone_url)
 				Shell.run_command("git remote update --prune")

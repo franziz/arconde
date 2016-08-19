@@ -1,3 +1,4 @@
+from exceptions import CommandError
 import subprocess
 
 class Shell:
