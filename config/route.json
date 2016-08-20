@@ -10,5 +10,17 @@
 					"container":"7083c0a6d8d0"
 			}
 		}
+	},
+	"isidsea/engine_sources/low_priority":{
+		"branch":"low_priority",
+		"root_path":"/root/app/storage/",
+		"full_path":"/root/app/storage/engine_sources/low_priority/",
+		"route":{
+			"push":{
+					"host":"production_server",
+					"target":"/home/isid/arcrawler_low_priority/src",
+					"container":"7083c0a6d8d0"
+			}
+		}
 	}
 }
