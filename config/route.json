@@ -19,7 +19,7 @@
 			"push":{
 					"host":"production_server",
 					"target":"/home/isid/arcrawler_low_priority/src",
-					"container":"7083c0a6d8d0"
+					"container":"78599b4e037c"
 			}
 		}
 	}
