@@ -1,26 +1,20 @@
 {
-	"isidsea/engine_sources/high_priority":{
-		"branch":"high_priority",
+	"high_priority":{		
 		"root_path":"/root/app/storage/",
-		"full_path":"/root/app/storage/engine_sources/high_priority/",
+		"full_path":"/root/app/storage/high_priority/",
 		"route":{
-			"push":{
-					"host":"production_server",
-					"target":"/home/isid/arcrawler/src",
-					"container":"7083c0a6d8d0"
-			}
+			"host":"production_server",
+			"target":"/home/isid/arcrawler",
+			"container":"7083c0a6d8d0"
 		}
 	},
-	"isidsea/engine_sources/low_priority":{
-		"branch":"low_priority",
+	"low_priority":{		
 		"root_path":"/root/app/storage/",
-		"full_path":"/root/app/storage/engine_sources/low_priority/",
-		"route":{
-			"push":{
-					"host":"production_server",
-					"target":"/home/isid/arcrawler_low_priority/src",
-					"container":"78599b4e037c"
-			}
+		"full_path":"/root/app/storage/low_priority/",
+		"route":{			
+			"host":"production_server",
+			"target":"/home/isid/arcrawler_low_priority",
+			"container":"78599b4e037c"			
 		}
 	}
 }

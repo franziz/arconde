@@ -20,6 +20,6 @@ class SFTP:
 		for item in os.listdir(source):
 			if os.path.isfile(os.path.join(source,item)):
 				self.sftp.put("{}/{}".format(source,item), "{}/{}".format(target,item))
-			else:
+			else:				
 				self.sftp.mkdir("{}/{}".format(target, item), 511)
 				self.put_dir("{}/{}".format(source,item), "{}/{}".format(target,item))

@@ -1,8 +1,9 @@
-from lib.factories.listener import ListenerFactory
+from lib.factories.listener      import ListenerFactory
+from falcon_multipart.middleware import MultipartMiddleware
 import falcon
 
 
-api           = falcon.API()
-engine_source = ListenerFactory.get_listener(ListenerFactory.ENGINE_SOURCE)
+api           = falcon.API(middleware=[MultipartMiddleware()])
+deploy        = ListenerFactory.get_listener(ListenerFactory.DEPLOY)
 
-api.add_route("/engine_source", engine_source)
+api.add_route("/deploy", deploy)

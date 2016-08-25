@@ -1,7 +1,7 @@
-from ..listeners.engine_source import EngineSourceListener
+from ..listeners.deploy        import DeployListener
 
-class ListenerFactory:
-	ENGINE_SOURCE = 0
+class ListenerFactory:	
+	DEPLOY = 0
 
 	def __init__(self):
 		pass
@@ -10,5 +10,5 @@ class ListenerFactory:
 	def get_listener(self, listener_name=None):
 		assert listener_name is not None, "listener_name is not defined."
 
-		if listener_name == ListenerFactory.ENGINE_SOURCE:
-			return EngineSourceListener()
+		if listener_name == ListenerFactory.DEPLOY:
+			return DeployListener()
