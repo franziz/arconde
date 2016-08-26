@@ -1,7 +1,7 @@
 *.openssh
-hosts.json
 storage/
 test.py
+*.json
 
 # Created by https://www.gitignore.io/api/python
 
