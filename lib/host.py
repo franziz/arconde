@@ -33,7 +33,7 @@ class Host:
 		print("[host][debug] Restarting...")
 		stdin, stdout, stderr = self.run_command("docker restart %s" % container)
 		print("[host][debug] Restarting %s: %s" % (container, stdout.channel.recv_exit_status()))
-		stdin, stdout, stderr = self.run_command("docker exec -d %s bash /root/app/kick_start.sh" % container)
-		print("[host][debug] Executing kick_start.sh: %s" % stdout.channel.recv_exit_status())
+		# stdin, stdout, stderr = self.run_command("docker exec -d %s bash /root/app/kick_start.sh" % container)
+		# print("[host][debug] Executing kick_start.sh: %s" % stdout.channel.recv_exit_status())
 		print("[host][debug] Started!")
 		
